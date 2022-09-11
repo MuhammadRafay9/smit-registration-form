@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Candidates</title>
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <style>
+        #main {
+            padding-top: 5%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        #main:before {
+            background-image: url('./img/back.png');
+            background-position: 50% 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+            content: " ";
+            display: block;
+            height: 40%;
+            left: 0;
+            opacity: .1;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        #form-row {
+            padding-top: 5%;
+        }
+
+        #form-row .row {
+            padding-left: 10%;
+            padding-right: 10%;
+
+            padding-top: 1%;
+            padding-bottom: 1%;
+
+
+        }
+
+        #tac {
+            padding: 0% 10% !important;
+        }
+
+        .container-fluid {
+            padding-bottom: 5%;
+        }
+
+        select,
+        input {
+            height: 55px !important;
+            border-color: #8dc63f !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+<!-- 
+        <div class="container">
+
+            <div class="row">
+
+                <nav class="navbar navbar-expand-lg navbar-light bg-light" style="z-index: 1000;">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="./list.html">Crud app</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="./list.html">List</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./index.html">Registration form</a>
+                                </li>
+                                <li class="nav-item float-right">
+                                    <a class="btn btn-danger" onclick="logOut();">Log Out</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div> -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12" id="main">
+                    <div class="col-12"><img src="./img/logo.png" class="img-fluid" alt=""></div>
+                    <div class="col-12">
+                        <h2>Course Registration Form</h2>
+                    </div>
+                    <div class="col-12">
+                        <h5>Services - Education - Registration</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="form-row" style="z-index: 1000;">
+                <div class="col-12">
+                    <form>
+                        <div class="row">
+
+                            <div class="col-md-6 col-sm-12">
+                                <label for="city" class="form-label">Select city</label>
+                                <select name="city" id="city" class="form-select city"
+                                    aria-label="Default select example">
+                                    <option value="khi">Karachi</option>
+                                    <option value="lhr">Lahore</option>
+                                    <option value="isb">Islamabad</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12">
+                                <label for="course" class="form-label">Select Course</label>
+                                <select name="course" id="course" class="form-select course"
+                                    aria-label="Default select example">
+                                    <option value="ai">Artificial intelligence</option>
+                                    <option value="web">Web and mobile</option>
+                                    <option value="ccna">CCNA</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6 col-sm-12">
+                                <label for="fullname" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="fullname">
+                            </div>
+
+                            <div class="col-md-6 col-sm-12">
+                                <label for="fathername" class="form-label">Father Name</label>
+                                <input type="text" class="form-control" id="fathername">
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6 col-sm-12">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email">
+                            </div>
+
+                            <div class="col-md-6 col-sm-12">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input type="number" class="form-control" id="phone">
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6 col-sm-12">
+                                <label for="cnic" class="form-label">CNIC</label>
+                                <input type="number" class="form-control" id="cnic">
+                            </div>
+
+                            <div class="col-md-6 col-sm-12">
+                                <label for="fcnic" class="form-label">Father's CNIC (Optional)</label>
+                                <input type="number" class="form-control" id="fcnic">
+                            </div>
+
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6 col-sm-12">
+                                <label for="dob" class="form-label">Date of birth</label>
+                                <input id="dob" class="form-control" type="date" />
+                            </div>
+
+                            <div class="col-md-6 col-sm-12">
+                                <label for="gender" class="form-label">Select gender</label>
+                                <select name="gender" id="gender" class="form-select gender"
+                                    aria-label="Default select example">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+
+                        <div class="row">
+
+                            <div class="col-12 col-md-12 col-sm-12">
+                                <label for="address" class="form-label">Address</label>
+                                <input type="text" class="form-control" id="address">
+                            </div>
+
+                        </div>
+
+
+                        <div class="row">
+
+                            <div class="col-12 col-md-12 col-sm-12">
+                                <label for="edu" class="form-label">Select Education</label>
+                                <select name="edu" id="edu" class="form-select edu" aria-label="Default select example">
+                                    <option value="matric">Matric</option>
+                                    <option value="inter">Inter</option>
+                                    <option value="bachelor">Bachelor</option>
+                                    <option value="master">Master</option>
+                                    <option value="phd">Ph.d</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="row" style="height:25vh ;">
+
+                            <div class="col-12 col-md-12 col-sm-12">
+                                <label for="picture" class="form-label">Picture</label>
+                                <input type="file" name="picture" class="form-control picture" id="picture">
+                            </div>
+                            <hr>
+
+                        </div>
+
+                        <div class="row" id="tac" style="">
+
+                            <div class="col-12 col-md-12 col-sm-12">
+                                <ol>
+                                    <li>I hereby, solemnly declare that the data and facts mentioned herein are true and
+                                        correct to the best of my knowledge. Further, I will abide by all the
+                                        established and future regulations and policies of SWIT</li>
+                                    <li>I hereby accept the responsibilities of good conduct and guarantee that I will
+                                        not be involved in any other activity, political or ethical, but learning during
+                                        my stay in the program.</li>
+                                    <li>Defiance will render my admission canceled at any point in time.</li>
+                                    <li>Upon completion, of the course, I will complete the required project by SWIT.
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-12">
+                                <button type="submit" onclick="updateCand(event)"
+                                    class="btn btn-primary col-12">Submit</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <script>
+
+    </script>
+
+
+
+
+    <script src="./js/edit_candidate.js"></script>
+
+    <script src="./js/logOut.js"></script>
+
+    <script src="./js/bootstrap.js"></script>
+</body>
+
+</html>
